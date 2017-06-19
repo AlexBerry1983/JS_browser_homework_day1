@@ -14,26 +14,28 @@ var createListItem2 = function(favFood){
   return listItem2;
 }
 var createListImg = function(imgSrc){
+  var imgLi = document.createElement("li")
   var img4 = document.createElement("img");
   img4.src = imgSrc;
   img4.width = 500;
   img4.height = 300;
-  return img4;
+  imgLi.appendChild(img4)
+  return imgLi;
 }
-var appendElements = function(cats, catObject, listItem1, listItem2, img4){
+var appendElements = function(cats, catObject, listItem1, listItem2, imgLi){
   catObject.appendChild(listItem1);
   catObject.appendChild(listItem2);
-  catObject.appendChild(img4);
+  catObject.appendChild(imgLi);
   cats.appendChild(catObject);
 }
 var addCat = function(listItem1, listItem2, imgSrc){
   var catObject = createCatObject();
   var listItem1 = createListItem1(listItem1);
   var listItem2 = createListItem2(listItem2);
-  var img4 = createListImg(imgSrc)
+  var imgLi = createListImg(imgSrc)
 
   var cats = document.querySelector("#cats");
-  appendElements(cats, catObject, listItem1, listItem2, img4);
+  appendElements(cats, catObject, listItem1, listItem2, imgLi);
 }
 var app = function() {
   addCat("Murdock", "Whatever you're trying to have for dinner", "https://upload.wikimedia.org/wikipedia/commons/c/c7/A_black_cat_named_Tilly.jpg");
