@@ -13,13 +13,13 @@ var createListItem2 = function(favFood){
   listItem2.innerText = "Favourite food: " + favFood;
   return listItem2;
 }
-var createListImg = function(imgSrc){
+var createListImg = function(imgUrl){
   var imgLi = document.createElement("li")
-  var img4 = document.createElement("img");
-  img4.src = imgSrc;
-  img4.width = 500;
-  img4.height = 300;
-  imgLi.appendChild(img4)
+  var imageVariable = document.createElement("img");
+  imageVariable.src = imgUrl;
+  imageVariable.width = 500;
+  imageVariable.height = 400;
+  imgLi.appendChild(imageVariable)
   return imgLi;
 }
 var appendElements = function(cats, catObject, listItem1, listItem2, imgLi){
@@ -28,11 +28,11 @@ var appendElements = function(cats, catObject, listItem1, listItem2, imgLi){
   catObject.appendChild(imgLi);
   cats.appendChild(catObject);
 }
-var addCat = function(listItem1, listItem2, imgSrc){
+var addCat = function(catName, favFood, imgUrl){
   var catObject = createCatObject();
-  var listItem1 = createListItem1(listItem1);
-  var listItem2 = createListItem2(listItem2);
-  var imgLi = createListImg(imgSrc)
+  var listItem1 = createListItem1(catName);
+  var listItem2 = createListItem2(favFood);
+  var imgLi = createListImg(imgUrl)
 
   var cats = document.querySelector("#cats");
   appendElements(cats, catObject, listItem1, listItem2, imgLi);
